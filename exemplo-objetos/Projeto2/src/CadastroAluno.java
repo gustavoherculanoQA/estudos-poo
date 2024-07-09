@@ -5,6 +5,7 @@ public class CadastroAluno {
     public String estadoCivil;
     public String email;
     public String curso;
+    public boolean cadastro;
 
     //MÉTODO COSTRUTOR
     public CadastroAluno(String estadoCivil, String curso) {
@@ -13,10 +14,6 @@ public class CadastroAluno {
     }
 
     //MÉTODOS 
-    public void mudarNome(String n){
-        this.setNome(n);
-    }
-
     public void status(){
         System.out.println("Nome: "+ this.getNome());
         System.out.println("Idade: "+this.getIdade());
@@ -24,9 +21,33 @@ public class CadastroAluno {
         System.out.println("Email: "+ getEmail());
         System.out.println("Curso: " + getCurso());
         System.out.println("Endereço: "+ getEndereco());
+        pagarMesalidade();
         System.out.println();
         System.out.println("================================");
     }
+    public void ativar(){   
+        this.cadastro = true;
+        
+    }
+    public void cancelar(){
+        this.cadastro = false;
+    }
+    public void pagarMesalidade(){
+        if(this.getCadastro()){
+            if(curso == "ENGENHARIA DA COMPUTAÇÃO"){
+                System.out.println("Mensalidade = R$1000,00");
+            }else if(curso == "MEDICINA"){
+                System.out.println("Mensalidade = R$ 12.000,00");
+            }else if(curso == "MEDICINA VETERINÁRIA"){
+                System.out.println("Mensalidade = R$1.800,00");
+            }else if(curso == "ADMINISTRAÇÃO"){
+                System.out.println("Mensalidade = R$ 850,00");
+            }
+            }else{
+                System.out.println("Não há mensalidade pois o cadastro não está ativo.");
+            }
+        }
+
 
 
 
@@ -66,6 +87,12 @@ public class CadastroAluno {
     }
     public void setCurso(String curso) {
         this.curso = curso;
+    }
+    public void setCadastro(boolean cadastro){
+        this.cadastro = cadastro;
+    }
+    public boolean getCadastro(){
+        return cadastro;
     }
 
     
