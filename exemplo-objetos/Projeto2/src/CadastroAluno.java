@@ -1,7 +1,7 @@
 public class CadastroAluno {
-    public String nome;
-    public String endereco;
-    public int idade;
+    private String nome;
+    private String endereco;
+    private int idade;
     public String estadoCivil;
     public String email;
     public String curso;
